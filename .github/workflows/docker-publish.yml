@@ -45,7 +45,7 @@ jobs:
           docker push $IMAGE_ID:$VERSION
           
       - name: deploy the application
-        uses: applyboy/ssh-action@master
+        uses: appleboy/ssh-action@master
         with:
           host: 43.205.203.102
           username: ubuntu
