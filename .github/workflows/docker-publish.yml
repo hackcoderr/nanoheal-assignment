@@ -50,8 +50,6 @@ jobs:
           host: 43.205.203.102
           username: ubuntu
           key: ${{secrets.ACTION_PRIVATE_KEY}}
-          envs: GITHUB_SHA
-          script: |
-            docker run -d --name wep-app -p 8080:8080 ghcr.io/hackcoderr/node-web-app:latest
+          script: docker run -d --name wep-app -p 8080:8080 ghcr.io/hackcoderr/node-web-app:latest
           
  
