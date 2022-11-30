@@ -43,13 +43,4 @@ jobs:
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
-          
-      - name: deploy the application
-        uses: appleboy/ssh-action@master
-        with:
-          host: 43.205.203.102
-          username: ubuntu
-          key: ${{secrets.ACTION_PRIVATE_KEY}}
-          script: docker run -d -p 8080:8080 ghcr.io/hackcoderr/node-web-app:latest
-          
  
